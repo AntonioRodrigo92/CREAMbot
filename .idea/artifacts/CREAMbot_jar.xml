@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CREAMbot:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CREAMbot_jar</output-path>
+    <root id="archive" name="CREAMbot.jar">
+      <element id="module-output" name="CREAMbot" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/twitter4j/twitter4j-core/4.0.7/twitter4j-core-4.0.7.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
