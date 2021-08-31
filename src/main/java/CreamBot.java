@@ -19,7 +19,7 @@ public class CreamBot {
             String twitterAPISecret = params.get("twitterAPISecret");
             String twitterAccessSecretToken = params.get("twitterAccessSecretToken");
 
-            TweetAPI tweet = new TweetAPI(twitterAPIKey, twitterAccessToken, twitterAPISecret, twitterAccessSecretToken);
+            TweetAPI tweet = new TweetAPI(twitterAPIKey, twitterAPISecret, twitterAccessToken, twitterAccessSecretToken);
             try {
                 tweet.postTweet(post);
             } catch (TwitterException e) {
