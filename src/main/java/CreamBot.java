@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Map;
 import twitter4j.TwitterException;
@@ -8,7 +9,12 @@ public class CreamBot {
         String fileLocation = args[0];
 
         LocalDate today = LocalDate.now();
-        LocalDate lastWorkDay = Utils.getLastWorkDay();
+        LocalDate lastWorkDay = null;
+        try {
+            lastWorkDay = Utils.getLastWorkDay();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         if (today.equals(lastWorkDay)) {
             String post = "*C.R.E.A.M.*";
