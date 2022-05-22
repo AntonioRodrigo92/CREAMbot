@@ -3,6 +3,7 @@ import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Month;
@@ -25,7 +26,7 @@ public class UtilsTest {
             mockedUtils.when(() -> Utils.paramGetter(anyString())).thenReturn(expected);
 
             //when
-            Map<String, String> actual = Utils.paramGetter("C:\\Users\\Antonio\\IdeaProjects\\CREAMbot\\src\\test\\resources\\parameters.txt");
+            Map<String, String> actual = Utils.paramGetter("C:\\Users\\AntónioRodrigo\\CREAMbot\\src\\test\\resources\\parameters.txt");
 
             //then
             assertEquals(actual, expected);
@@ -39,7 +40,7 @@ public class UtilsTest {
         expected.put("teste1", "teste2");
 
         //when
-        Map<String, String> actual = Utils.paramGetter("C:\\Users\\Antonio\\IdeaProjects\\CREAMbot\\src\\test\\resources\\parameters.txt");
+        Map<String, String> actual = Utils.paramGetter("C:\\Users\\AntónioRodrigo\\CREAMbot\\src\\test\\resources\\parameters.txt");
 
         //then
         assertEquals(actual, expected);
@@ -48,7 +49,7 @@ public class UtilsTest {
     @Test
     void should_ReturnLastWorkDay() throws IOException {
         //given
-        LocalDate expected = LocalDate.of(2022, Month.APRIL, 29);
+        LocalDate expected = LocalDate.of(2022, Month.MAY, 31);
         //when
         LocalDate actual = Utils.getLastWorkDay();
         //then
