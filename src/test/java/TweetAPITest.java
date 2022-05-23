@@ -17,7 +17,7 @@ import static org.mockito.Mockito.*;
 class TweetAPITest {
 
     @InjectMocks
-    private TweetAPI tweetAPI;
+    private TweetAPI tweetAPI = new TweetAPI("", "", "", "");
 
     @Mock
     private Twitter twitterMock;
@@ -53,19 +53,17 @@ class TweetAPITest {
 //        verify(tweetAPIMock, times(1)).postTweet("");
 //    }
 
-    @Disabled
+
     @Test
     void should_call_updateStatus_once() throws TwitterException {
         //  given
-        String tweet = "";
+        String tweet = "top kek";
         //  when
-//        when(twitterMock.updateStatus(anyString())).thenReturn(new Status());
         tweetAPI.postTweet(tweet);
         //  then
-        verify(twitterMock).updateStatus(tweet);
+        verify(twitterMock, times(1)).updateStatus(tweet);
     }
 
-    @Disabled
     @Test
     void should_ThrowException_when_PostTweet() throws TwitterException {
         //  given
