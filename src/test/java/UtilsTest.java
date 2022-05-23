@@ -57,15 +57,13 @@ public class UtilsTest {
     }
 
 
-    @Disabled
     @Test
     void should_ReturnLastWorkDay_NoConnection_Exception() {
-        //  given
-        //NO INTERNET CONNECTION!!!
-        //  when
-        Executable executable = () -> Utils.getLastWorkDay();
-        //  then
-        assertThrows(IOException.class, executable);
+        try(MockedStatic<Utils> mockedUtils = mockStatic(Utils.class)) {
+            mockedUtils.when(() -> Utils.getLastWorkDay()).thenThrow(IOException.class);
+            Executable executable = () -> Utils.getLastWorkDay();
+            assertThrows(IOException.class, executable);
+        }
     }
 
 }

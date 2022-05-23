@@ -62,6 +62,7 @@ class TweetAPITest {
         tweetAPI.postTweet(tweet);
         //  then
         verify(twitterMock, times(1)).updateStatus(tweet);
+//        verifyNoInteractions(twitterMock);
     }
 
     @Test
