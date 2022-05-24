@@ -22,38 +22,6 @@ class TweetAPITest {
     @Mock
     private Twitter twitterMock;
 
-//    @Test
-//    void should_ThrowException_when_PostTweet() throws TwitterException {
-//        //  given
-//        doThrow(TwitterException.class).when(tweetAPIMock).postTweet(anyString());
-//        //  when
-//        Executable executable = () -> tweetAPIMock.postTweet("");
-//        //  then
-//        assertThrows(TwitterException.class, executable);
-//    }
-//
-//    @Test
-//    void should_NotThrowException_when_PostTweet() throws TwitterException {
-//        //  given
-//        doNothing().when(tweetAPIMock).postTweet(anyString());
-//        //  when
-//        tweetAPIMock.postTweet("");
-//        //  then
-//        //  No Exception Thrown
-//    }
-//
-//    @Test
-//    void should_callPostTweet_once() throws TwitterException {
-//        //  given
-//
-//        //  when
-//        doNothing().when(tweetAPIMock).postTweet(isA(String.class));
-//        tweetAPIMock.postTweet("");
-//        //  then
-//        verify(tweetAPIMock, times(1)).postTweet("");
-//    }
-
-
     @Test
     void should_call_updateStatus_once() throws TwitterException {
         //  given
@@ -62,7 +30,6 @@ class TweetAPITest {
         tweetAPI.postTweet(tweet);
         //  then
         verify(twitterMock, times(1)).updateStatus(tweet);
-//        verifyNoInteractions(twitterMock);
     }
 
     @Test
@@ -74,6 +41,5 @@ class TweetAPITest {
         //  then
         assertThrows(TwitterException.class, executable);
     }
-
 
 }

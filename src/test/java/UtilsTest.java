@@ -1,15 +1,11 @@
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.HashMap;
 import java.util.Map;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -40,7 +36,7 @@ public class UtilsTest {
         expected.put("teste1", "teste2");
 
         //when
-        Map<String, String> actual = Utils.paramGetter("C:\\Users\\AntónioRodrigo\\CREAMbot\\src\\test\\resources\\parameters.txt");
+        Map<String, String> actual = Utils.paramGetter("C:\\Users\\Antonio\\IdeaProjects\\CREAMbot\\src\\test\\resources\\parameters.txt");
 
         //then
         assertEquals(actual, expected);
